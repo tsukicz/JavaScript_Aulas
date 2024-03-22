@@ -1,4 +1,4 @@
-# Variáveis
+># Variáveis
 
 Temos 3 variáveis que podemos usar em JavaScript, sendo elas:
 
@@ -79,9 +79,9 @@ function funcao() {
 }
  funcao();
 ```
-# Tipos de Dados
-
-### **Tipos primitivos**
+># Tipos de Dados
+---
+## **Tipos primitivos**
 
 Os tipos primitivos em JavaScript são os tipos de dados fundamentais que não são objetos e não têm métodos próprios, possui cinco tipos principais de dados primitivos, esses que podem ser representados:
 
@@ -145,7 +145,8 @@ let nome = null;
 console.log(nome); 
 ```
 
-# Exercício
+>## Exercício:
+
 Faça um site capaz de entregar as duas raízes através um da fórmula de bhaskara em JavaScript. Podendo ser uma interface simples:
 
 ```javascript
@@ -279,4 +280,111 @@ Faça um site capaz de entregar as duas raízes através um da fórmula de bhask
     
 </body>
 </html>
+```
+
+### Objetos:
+utilizamos objetos para agrupar valores que possuem propriedades e funções.
+
+- **O que são:** Coleções de informações organizadas em pares chave-valor **=>** { nome: 'João', idade: 30, cidade: 'São Paulo' }
+- **são usados:** Representam entidades com propriedades específicas.
+
+```javascript
+let usuario = {
+    nome: 'Denise',
+    idade: 17,
+    email: 'denise@example.com',
+    estáAtivo: true
+};
+```
+### Array:
+O array é um objeto no JavaScript, nos auxilia pois podemos utilizar uma única variável para armazenar uma lista de diferentes elementos, os arrays são definidos usando colchetes `[]`
+
+- **O que são:** Listas ordenadas de itens **=>** ['maçã', 'banana', 'laranja']
+- **são usados:** Armazenam múltiplos valores em uma única variável e são acessados por índices.
+
+```javascript
+let frutas = ['maçã', 'banana', 'laranja'];
+```
+># Operadores Básico
+ >**Operadores Aritméticos:** Os operadores aritméticos são usados para realizar operações matemáticas básicas, como adição, subtração, multiplicação e divisão. 
+- Adição: `+` 
+ ```javascript 
+  let soma = 10 + 5; 
+```
+- Subtração: `-` 
+```javascript 
+  let diferenca = 10 - 5; 
+```
+- Multiplicação: `*` 
+```javascript 
+let produto = 10 * 5; 
+``` 
+- Divisão: `/` 
+ ```javascript
+   let quociente = 10 / 5; 
+```
+- Módulo: `%` : o operador % é um pouco diferente na programação ele retorna o resto da divisão
+```javascript
+   let resto = 10 % 5; 
+ ```
+- Incremento: `++` 
+```javascript
+let x = 5;
+x++; // x é igual a 6, ele adiciona + 1 ao numero
+```
+- Decremento: `--`
+```javascript
+let y = 5;
+y--; // y é igual a 4, ele diminui - 1 do número
+```
+
+>**Operadores de comparação:** são usados para comparar valores e retornar um resultado booleano (verdadeiro ou falso), sendo eles: `==`, `!=`, `===`, `!==`, `>`, `<`, `>=` e `<=`:
+```javascript
+console.log(5 == 5);    
+console.log('5' == 5);   
+
+console.log(5 != 10);    
+console.log('5' != 5);
+
+console.log(5 === 5);    
+console.log('5' === 5);  
+
+console.log(5 !== '5');  
+console.log(5 !== 5);  
+
+console.log(10 > 5);    
+console.log(5 < 10);  
+
+console.log(10 >= 10);  
+console.log(5 <= 10);   
+```
+
+>**Operadores Lógicos:** Os operadores lógicos são usados para combinar ou inverter valores booleanos, sendo os operadores `"&&" (E lógico)`, `"||" (OU lógico)` e `"!" (NÃO lógico)` são usados para avaliar condições complexas e tomar decisões com base nos resultados:
+
+```javascript
+console.log(true && true);   // true
+console.log(true && false);  // false
+console.log(false && true);  // false
+console.log(false && false); // false
+
+console.log(true || true);   // true
+console.log(true || false);  // true
+console.log(false || true);  // true
+console.log(false || false); // false
+
+console.log(!true);  // false
+console.log(!false); // true
+```
+>**Typeof:** `typeof` é um operador unário em JavaScript que é usado para determinar o tipo de dado de uma expressão, ele retorna uma string indicando o tipo de dado.
+O operador `typeof` é uma ferramenta útil para lidar com diferentes tipos de dados em JavaScript, especialmente em situações em que é necessário garantir que um determinado tipo de dado seja manipulado corretamente.
+
+```javascript
+console.log(typeof 42);        // 'number'
+console.log(typeof 'Hello');   // 'string'
+console.log(typeof true);      // 'boolean'
+console.log(typeof undefined); // 'undefined'
+console.log(typeof null);      // 'object' - cuidado! typeof null retorna 'object', mas null é primitivo
+console.log(typeof {});        // 'object'
+console.log(typeof []);        // 'object' - cuidado! Array é considerado um objeto em JavaScript
+console.log(typeof function(){}); // 'function'
 ```
