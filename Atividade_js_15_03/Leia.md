@@ -150,136 +150,30 @@ console.log(nome);
 Faça um site capaz de entregar as duas raízes através um da fórmula de bhaskara em JavaScript. Podendo ser uma interface simples:
 
 ```javascript
-<!DOCTYPE html>
-<html lang = "pt-br">
-<head>
-    <meta charset = "UTF-8">
-    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-    <title>Soft Bhaskara</title>
+ffunction calcularBhaskara(a, b, c) {
+    let delta = Math.pow(b, 2) - 4 * a * c;
+    let raizes = [];
 
-    <style>
+    if (delta < 0) {
+        return "Não possui raiz real.";
+    } else if (delta === 0) {
+        let raiz = -b / (2 * a);
+        raizes.push(raiz);
+        return raizes;
+    } else {
+        let raiz1 = (-b + Math.sqrt(delta)) / (2 * a);
+        let raiz2 = (-b - Math.sqrt(delta)) / (2 * a);
+        raizes.push(raiz1, raiz2);
+        return raizes;
+    }
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+let coeficienteA = 1;
+let coeficienteB = -3;
+let coeficienteC = -54;
 
-        body {
-            width: 100vw;
-            height:100vh;
-
-            background-color: rgb(243, 205, 221);
-            display: grid;
-            place-items: center;
-        }
-
-        .container {
-            width: 25%;
-            height: 40%;
-            background-color: rgb(253, 230, 237);
-
-            border-radius: 10px;
-            border: 1px solid rgb(243, 205, 221);
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #coeficiente-c {
-            margin-bottom: 15px;
-        }
-
-        label {
-            color: rgb(197, 92, 153);
-
-            font-weight: bolder;
-            font-size: large;
-        }
-
-        input {
-            width: 46%;
-            height: 8%;
-        }
-
-        button {
-            cursor: pointer;
-            font-weight: bolder;
-
-            width: 35%;
-            height: 10%;
-
-            background-color: rgb(209, 158, 188);
-            color: rgb(250, 225, 239);
-        }
-
-        button:hover {
-            color: rgb(235, 214, 227);
-            background-color: rgb(206, 108, 163);
-        }
-
-        label, input, button, p {
-            padding: 5px;
-            margin: 3px;
-            box-sizing: border-box; 
-            border: none;
-            border-radius: 5px;
-        }
-
-        p {
-            color: rgb(197, 92, 153);
-
-            font-size: x-large;
-            font-weight: bolder;
-        }
-
-    </style>
-
-</head>
-<body>
-
-    <div class = "container">
-
-        <label for = "coeficiente-a">Entre com o coeficiente: "a"</label>
-        <input type = "number" id = "coeficiente-a">
-
-        <label for = "coeficiente-b">Entre com o coeficiente: "b"</label>
-        <input type = "number" id = "coeficiente-b">
-
-        <label for = "coeficiente-c">Entre com o coeficiente: "c"</label>
-        <input type = "number" id = "coeficiente-c">
-
-        <button id = "button" onclick = "calcularBhaskara()">Calcular</button>
-
-        <p id = "result"></p>
-
-    </div>
-
-    <script>
-        function calcularBhaskara() {
-            let a = parseFloat(document.getElementById("coeficiente-a").value);
-            let b = parseFloat(document.getElementById("coeficiente-b").value);
-            let c = parseFloat(document.getElementById("coeficiente-c").value);
-
-            let delta = Math.pow(b, 2) - 4 * a * c;
-
-            if (delta < 0) {
-                document.getElementById("result").innerHTML = "Não possuí raíz real.";
-
-            } else {
-                let x1 = (-b + Math.sqrt(delta)) / (2 * a);
-                let x2 = (-b - Math.sqrt(delta)) / (2 * a);
-
-                document.getElementById("result").innerHTML = "X1 = " + x1 + "<br>X2 = " + x2;
-            }
-        }
-    </script>
-    
-</body>
-</html>
+let resultado = calcularBhaskara(coeficienteA, coeficienteB, coeficienteC);
+console.log("Raízes da equação:", resultado);
 ```
 
 ### Objetos:
